@@ -1,2 +1,7 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FCG.Notifications.Api/FCG.Notifications.Api.csproj" />
+    <Project Path="src/FCG.Notifications.Application/FCG.Notifications.Application.csproj" />
+    <Project Path="src/FCG.Notifications.Contracts/FCG.Notifications.Contracts.csproj" />
+  </Folder>
 </Solution>
