@@ -4,15 +4,25 @@ using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
+#region Controllers
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+#endregion
+
+#region MediatR
 
 builder.Services.AddMediatR(configuration =>
 {
     configuration.RegisterServicesFromAssembly(
         typeof(SendPurchaseConfirmationCommand).Assembly);
 });
+
+#endregion
+
+#region MassTransit
 
 builder.Services.AddMassTransit(config =>
 {
@@ -37,29 +47,50 @@ builder.Services.AddMassTransit(config =>
             "notifications-user-created-event",
             endpoint =>
             {
-                endpoint.ConfigureConsumer<UserCreatedEventConsumer>(
-                    context);
+                endpoint.ConfigureConsumer<
+                    UserCreatedEventConsumer>(context);
             });
 
         cfg.ReceiveEndpoint(
             "notifications-payment-processed-event",
             endpoint =>
             {
-                endpoint.ConfigureConsumer<PaymentProcessedEventConsumer>(
-                    context);
+                endpoint.ConfigureConsumer<
+                    PaymentProcessedEventConsumer>(context);
             });
     });
 });
 
+#endregion
+
 var app = builder.Build();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+#region Pipeline
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapGet("/", () => "FCG Notifications API is running.");
+app.MapGet("/", () =>
+    Results.Ok(new
+    {
+        service = "NotificationsAPI",
+        message = "FCG Notifications API is running."
+    }));
+
+app.MapGet("/health", () =>
+    Results.Ok(new
+    {
+        service = "NotificationsAPI",
+        status = "Healthy"
+    }));
+
+#endregion
 
 app.Run();
