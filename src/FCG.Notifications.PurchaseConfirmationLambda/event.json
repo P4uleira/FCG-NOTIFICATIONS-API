@@ -3,7 +3,7 @@
     {
       "messageId": "test-message-id-2",
       "receiptHandle": "test-receipt-handle",
-      "body": "{\"OrderId\":\"ff8caf63-916e-4391-b1c0-27becf0a76d5\",\"UserId\":\"dce8e95c-14a5-4c50-b272-c75e9511d51e\",\"GameId\":\"0c53430d-5fa3-4959-bb15-0b0731e1ff91\",\"Price\":99.90,\"Status\":\"Approved\",\"ProcessedAt\":\"2026-09-04T00:17:18.258Z\"}",
+      "body": "{\"OrderId\":\"9b55fdfd-1485-482c-b9e5-513d4bc703f9\",\"UserId\":\"2cba2a4b-cd0e-42f3-a612-450ee8bf3cc1\",\"GameId\":\"4f8b7ed6-5f52-4610-a177-854bda8415b5\",\"Price\":99.90,\"Status\":\"Approved\",\"ProcessedAt\":\"2026-09-15T20:46:26.0143308Z\"}",
       "attributes": {
         "ApproximateReceiveCount": "1",
         "SentTimestamp": "1789310000000",

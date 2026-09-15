@@ -3,7 +3,7 @@
     {
       "messageId": "test-message-id-1",
       "receiptHandle": "test-receipt-handle",
-      "body": "{\"UserId\":\"463607f7-24a5-4368-9478-39c9ff1da5de\",\"Name\":\"Teste SQS Definitivo\",\"Email\":\"sqsdefinitivo@fcg.com\",\"Role\":\"User\",\"CreatedAt\":\"2026-09-13T14:49:31.6694532Z\"}",
+      "body": "{\"UserId\":\"2cba2a4b-cd0e-42f3-a612-450ee8bf3cc1\",\"Name\":\"Nome\",\"Email\":\"email2@fcg.com\",\"Role\":\"User\",\"CreatedAt\":\"2026-09-15T20:29:12.9272682Z\"}",
       "attributes": {
         "ApproximateReceiveCount": "1",
         "SentTimestamp": "1789310000000",
